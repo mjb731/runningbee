@@ -53,6 +53,10 @@ This pattern is useful when records in a collection are similar but not the same
 Different clinics could have different fields, but the same collection would could be queried regardless of clinic.
 Adding an index on `clinical_id` can be helpful.
 
+Another possibility is inheritance pattern, where each clinic result collection would be derived from a base result collection.
+If queries are only on one clinic, this could improve performance.
+The downside is that each new clinic would require a derived collection.
+
 ## Q2
 
 The `1=1` snippet is always true, and as the first test in the AND clause, can be removed.
